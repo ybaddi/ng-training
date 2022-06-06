@@ -5,19 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormulairePersonneComponent } from './formulaire-personne/formulaire-personne.component';
+import { FormulaireLoginComponent } from './formulaire-login/formulaire-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormulaireComponent,
-    FormulairePersonneComponent
+    FormulairePersonneComponent,
+    FormulaireLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
