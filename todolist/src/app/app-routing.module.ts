@@ -5,6 +5,7 @@ import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
 {path:"", component:HomeComponent},
+{path:"auth/login", component:TodosComponent},
 {path:"todos", component:TodosComponent}
 ];
 

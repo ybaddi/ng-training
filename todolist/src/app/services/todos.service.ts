@@ -13,7 +13,12 @@ export class TodosService {
     return this.http.get<Todo[]>("http://localhost:3000/todos");
   }
 
-  delete(id:number){
-    return this.http.delete("http://localhost:3000/todos/"+id);
+  add(todo:Todo){
+    return this.http.post("http://localhost:3000/todos/", todo);
+  }
+
+  delete(todo:Todo){
+    console.log(todo);
+    return this.http.delete("http://localhost:3000/todos/"+todo.id);
   }
 }
