@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulaire-login',
@@ -11,11 +11,12 @@ export class FormulaireLoginComponent implements OnInit {
   username: FormControl = new FormControl('username',[Validators.required,Validators.pattern(/^[A-Z][a-z]{2,10}/)])
   password: FormControl =  new FormControl('password',[Validators.required,Validators.pattern(/^[A-Z][a-z]{2,10}/)])
   
-  loginForm: FormGroup = new FormGroup({
+  loginForm: FormGroup = this.fb.group({
     username: this.username,
     password: this.password
   })
-  constructor() { }
+
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }

@@ -17,8 +17,8 @@ export class FormulairePersonneComponent implements OnInit {
 
   ajouterPersonne(){
     this.personnes.push({ ...this.personne });
-// this.personne.nom = '';
-// this.personne.prenom = '';
+this.personne.nom = '';
+this.personne.prenom = '';
 console.log(this.personnes);
   }
 
