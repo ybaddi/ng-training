@@ -1,11 +1,5 @@
 {
-  "todos": [
-    {
-      "id": 1,
-      "name": "json-server",
-      "completed": 1
-}
-  ],
+  "todos": [],
   "comments": [
     {
       "id": 1,

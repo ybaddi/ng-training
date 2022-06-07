@@ -17,6 +17,10 @@ export class TodosService {
     return this.http.post("http://localhost:3000/todos/", todo);
   }
 
+  update(todo:Todo){
+    return this.http.put(`http://localhost:3000/todos/${todo.id}`, todo);
+  }
+
   delete(todo:Todo){
     console.log(todo);
     return this.http.delete("http://localhost:3000/todos/"+todo.id);

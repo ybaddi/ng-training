@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TodosService } from '../services/todos.service';
-import { Todo } from '../models/todo';
+import { TodosService } from '../../services/todos.service';
+import { Todo } from '../../models/todo';
 
 @Component({
   selector: 'app-todos',
@@ -8,6 +8,11 @@ import { Todo } from '../models/todo';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
+  
+  listTodos:boolean=false;
+  noTodos:boolean=false;
+  editTodoForm:boolean=false;
+  
   myTodo: Todo={
     name: '',
     description: '',
@@ -15,6 +20,7 @@ export class TodosComponent implements OnInit {
   }
   constructor(private todosService:TodosService) { }
   todos:Todo[] = [];
+  
   ngOnInit(): void {
     this.todosService.getAll().subscribe(
       (res) => {
@@ -27,7 +33,8 @@ export class TodosComponent implements OnInit {
       name: '',
       description: '',
       completed: false
-    }
+    };
+    this.editTodoForm=false;
   }
 
   addTodo(){
@@ -36,6 +43,23 @@ export class TodosComponent implements OnInit {
         console.log("delete");
         // this.todos.push(todo);
         this.todos = [todo, ...this.todos];
+        this.resetForm();
+      });
+  }
+
+
+  editTodo(todo:Todo){
+     this.myTodo=todo;
+     this.editTodoForm=true;
+  }
+
+  
+  updateTodo(){
+    this.todosService.update(this.myTodo).subscribe(
+      (todo)=>{
+        // this.todos.push(todo);
+        //this.todos = [todo, ...this.todos];
+        // this.updateTask();
         this.resetForm();
       });
   }

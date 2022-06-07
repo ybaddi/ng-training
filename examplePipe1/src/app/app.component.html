@@ -326,7 +326,13 @@
 </div>
 
 <div class="content" role="main">
-{{ price | currency: "CAD": "MAD": "1.2-4"}}
+{{ price | currency: "CAD": "MAD": "1.2-4"}} <br/>
+
+<ul>
+  <li *ngFor="let p of prices">{{ p | formatFileSize:true }} </li>
+</ul>
+<br/>
+{{ price | formatFileSize }}
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
