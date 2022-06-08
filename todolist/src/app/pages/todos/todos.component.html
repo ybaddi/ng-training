@@ -49,8 +49,8 @@
           <td>{{ todo.name }}</td>
           <td>{{ todo.description}}</td>
           <td>
-            <span class="badge {{ todo.completed | completedBadgeFormat}}">{{ todo.completed |
-              completedValueFormat}}</span>
+            <!-- <span class="badge {{ todo.completed | completedBadgeFormat}}">{{ todo.completed |
+              completedValueFormat}}</span> -->
           </td>
           <td>
             <button (click)="delete(todo)">Delete</button>

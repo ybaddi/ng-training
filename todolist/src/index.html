@@ -9,5 +9,29 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCtkefOkDotTecVpB3cUMO5PF3HRYRT3h4",
+      authDomain: "ng-cmr.firebaseapp.com",
+      projectId: "ng-cmr",
+      storageBucket: "ng-cmr.appspot.com",
+      messagingSenderId: "170778735550",
+      appId: "1:170778735550:web:98d904a5decabd40bb3fef",
+      measurementId: "G-B0YV5P0B1K"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
 </html>
