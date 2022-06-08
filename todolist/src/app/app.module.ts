@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     CompletedFormatPipe,
     CompletedBadgeFormatPipe,
     CompletedValueFormatPipe,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

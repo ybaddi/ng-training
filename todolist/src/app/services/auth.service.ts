@@ -13,6 +13,10 @@ export class AuthService {
     return this.frAuth.signInWithEmailAndPassword(user.email,user.password); 
   }
 
+  register(user:User){
+    return this.frAuth.createUserWithEmailAndPassword(user.email,user.password); 
+  }
+
   isAuthonticated(){
     return this.frAuth.user;
   }
