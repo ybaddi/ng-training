@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,12 @@ import { FormsModule } from '@angular/forms';
 import { CompletedFormatPipe } from './completed-format.pipe';
 import { CompletedBadgeFormatPipe } from './pipes/completed-badge-format.pipe';
 import { CompletedValueFormatPipe } from './pipes/completed-value-format.pipe';
+import { LoginComponent } from './pages/login/login.component';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -21,13 +28,18 @@ import { CompletedValueFormatPipe } from './pipes/completed-value-format.pipe';
     NavbarComponent,
     CompletedFormatPipe,
     CompletedBadgeFormatPipe,
-    CompletedValueFormatPipe
+    CompletedValueFormatPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
